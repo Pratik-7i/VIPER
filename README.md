@@ -36,11 +36,11 @@ VIPER is the synonym for:
 
 ## Overview
 
-- Only the presenter talks to the view, and only the interactor talks to the model (entity). The presenter and interactor coordinate with each other. The presenter is concerned with display and user action, and the interactor is concerned with manipulating the data.
-- VIPER follows a very clean architecture. It isolates each module from others. So changing or fixing bugs is very easy as you only have to update a specific module. 
+- VIPER follows a very clean architecture. It isolates each module from others, so changing or fixing bugs is very easy as you only have to update a specific module. 
 - VIPER creates a very good environment for unit testing. 
 - As each module is independent of others, it maintains low coupling very well. So, dividing work among co-developers is also pretty simple.
-- VIPER should be used when an application’s requirements are very well-formed. Working with constantly changing requirements may create confusion and messed-up codes. So, it should not be used in small projects as MVP or MVC will suffice. 
+- VIPER should be used when an application’s requirements are very well-formed. Working with constantly changing requirements may create confusion and messed-up codes. So, it should not be used in small projects as `MVP` or `MVC` will be sufficient. 
+- Only the Presenter talks to the View, and only the Interactor talks to the Entity (model). The Presenter and Interactor coordinate with each other. The Presenter is concerned with display and user action, and the Interactor is concerned with manipulating the data.
 
 ![VIPER](https://user-images.githubusercontent.com/96768526/174662946-a71f3128-387b-410c-abc5-4e8d21c99dcb.png)
 
@@ -52,31 +52,31 @@ VIPER is the synonym for:
 ### Presenter
 
 - This is the only class that interacts with all others. 
-- This is the mediator between the view and the interactor.
+- This is the mediator between the view and the Interactor.
 - It contains the UI related (but UIKit independent) business logic, invokes methods on the Interactor.
-- It gets user response from the View and works accordingly. The only class to communicate with all the other components. Calls the router for wire-framing, Interactor to fetch data (network calls or local data calls), view to update the UI.
-- It directs data between the view and interactor, taking user actions and calling router to move the user between views.
+- It gets user response from the View and works accordingly. The only class to communicate with all the other components. Calls the Router for wire-framing, Interactor to fetch data (network calls or local data calls), View to update the UI.
+- It directs data between the View and Interactor, taking user actions and calling Router to move the user between views.
 
 ### Interactor
 
 - This is considered to be the backbone of the app as it contains the business logic. 
-- It handles data fetching
-- Has the business logic of an app. e.g if business logic depends on making network calls then it is Interactor’s responsibility to do so.
+- It handles data fetching.
+- Has the business logic of an app, e.g if business logic depends on making network calls then it is Interactor’s responsibility to do so.
 - It contains business logic related to the data (Entities) or networking, like creating new instances of entities or fetching them from the server. For those purposes you’ll use some Services and Managers which are not considered as a part of VIPER module but rather an external dependency.
 
 ### Router
 
 - This class contains all the navigation logic describing the screens that need to be shown
-- It gets input data from the presenter and executes that action.
-- Listens from the presenter about which screen to present and executes that.
+- It gets input data from the Presenter and executes that action.
+- Listens from the Presenter about which screen to present and executes that.
 - It handles navigation between screens. 
 
 ### Entity
 
-- These are the basic model objects used by the inter-actor. It is the smallest element inside VIPER.
+- These are the basic model objects used by the Interactor. It is the smallest element inside VIPER.
 - It represents application data.
-- Contains plain model classes used by the Inter-actor.
-- One thing to remember about the Entity is out of all the layers only the Inter-actor should own an entity.
+- Contains plain model classes used by the Interactor.
+- One thing to remember about the Entity is out of all the layers only the Interactor should own an entity.
 
 ## MVC Flow
 
@@ -108,7 +108,7 @@ VIPER is the synonym for:
 ## Protocols
 
 In VIPER, protocols are used to communicate between layers. One layer calls another through a protocol. The calling layer calls a function from a protocol. The listening layer conforms to that protocol and implements the function.
-A naming convention is followed to name a protocol. e.g, ‘viewToPresenterProtocol’. So, it is a ‘protocol’ that will be implemented by ‘the presenter’ to listen to what the ‘view’ has to say.
+A naming convention is followed to name a protocol. e.g, `viewToPresenterProtocol`. So, it is a ‘protocol’ that will be implemented by ‘the presenter’ to listen to what the ‘view’ has to say.
 
 - `PresenterToViewProtocol` — Presenter calls, View listens. The presenter receives a reference from this protocol to access View. View conforms to the protocol.
 - `ViewToPresenterProtocol` — *View* calls, *Presenter* listens.
