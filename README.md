@@ -135,5 +135,6 @@ Also, our protocol names must be different for different modules. One way to ach
 - `View` will have reference to `Presenter` and `Presenter` will have reference to `View`, because both are calling each other.
 - `Presenter` will have reference to `Interactor` and `Interactor` will have reference to `Presenter`, because both are calling each other.
 - `Presenter` will have reference to `Router`, but no vice-versa, because `Router` is not calling `Presenter`.
+- Based on above situations, take `weak` reference where two modules have reference to each other.
 - There is no role of `Entity` reference. It exists in VIPER as entity same as it exists in MVC / MVVM.
 
