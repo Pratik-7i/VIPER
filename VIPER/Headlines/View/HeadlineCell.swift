@@ -16,7 +16,7 @@ class HeadlineCell: UITableViewCell
         super.awakeFromNib()
         self.selectionStyle = .none
     }
- 
+  
     func load(_ headline: HeadlinesModel) {
         self.headlineLable.text = headline.title
         self.headlineImgView.setImage(headline.urlToImage)
