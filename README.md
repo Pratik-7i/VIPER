@@ -1,4 +1,4 @@
-VIPER architecture for iOS project with sample project. 
+# VIPER architecture for iOS project with sample project. 
 
 ![Simulator Screen Shot - iPhone 13 - 2022-06-20 at 19 46 40](https://user-images.githubusercontent.com/96768526/174659156-8c98d16c-ab6e-4805-9657-4979532a25b4.png)
 ![Simulator Screen Shot - iPhone 13 - 2022-06-20 at 22 01 50](https://user-images.githubusercontent.com/96768526/174659158-223ff14f-61c2-47f0-8901-a77f3dece2f7.png)
@@ -36,7 +36,7 @@ VIPER is the synonym for:
 
 ## Overview
 
-- Only the presenter talks to the view, and only the inter-actor talks to the model (entity). The presenter and inter-actor coordinate with each other. The presenter is concerned with display and user action, and the inter-actor is concerned with manipulating the data.
+- Only the presenter talks to the view, and only the interactor talks to the model (entity). The presenter and interactor coordinate with each other. The presenter is concerned with display and user action, and the interactor is concerned with manipulating the data.
 - VIPER follows a very clean architecture. It isolates each module from others. So changing or fixing bugs is very easy as you only have to update a specific module. 
 - VIPER creates a very good environment for unit testing. 
 - As each module is independent of others, it maintains low coupling very well. So, dividing work among co-developers is also pretty simple.
@@ -52,16 +52,16 @@ VIPER is the synonym for:
 ### Presenter
 
 - This is the only class that interacts with all others. 
-- This is the mediator between the view and the inter-actor.
-- It contains the UI related (but UIKit independent) business logic, invokes methods on the Inter-actor.
-- It gets user response from the View and works accordingly. The only class to communicate with all the other components. Calls the router for wire-framing, Inter-actor to fetch data (network calls or local data calls), view to update the UI.
-- It directs data between the view and inter-actor, taking user actions and calling router to move the user between views.
+- This is the mediator between the view and the interactor.
+- It contains the UI related (but UIKit independent) business logic, invokes methods on the Interactor.
+- It gets user response from the View and works accordingly. The only class to communicate with all the other components. Calls the router for wire-framing, Interactor to fetch data (network calls or local data calls), view to update the UI.
+- It directs data between the view and interactor, taking user actions and calling router to move the user between views.
 
 ### Interactor
 
 - This is considered to be the backbone of the app as it contains the business logic. 
 - It handles data fetching
-- Has the business logic of an app. e.g if business logic depends on making network calls then it is Inter-actor’s responsibility to do so.
+- Has the business logic of an app. e.g if business logic depends on making network calls then it is Interactor’s responsibility to do so.
 - It contains business logic related to the data (Entities) or networking, like creating new instances of entities or fetching them from the server. For those purposes you’ll use some Services and Managers which are not considered as a part of VIPER module but rather an external dependency.
 
 ### Router
