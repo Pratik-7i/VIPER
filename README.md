@@ -1,4 +1,4 @@
-# VIPER Architecture Pattern for iOS with sample project. 
+# VIPER Architecture Pattern for iOS with a sample project. 
 
 ![Simulator Screen Shot - iPhone 13 - 2022-06-20 at 19 46 40](https://user-images.githubusercontent.com/96768526/174659156-8c98d16c-ab6e-4805-9657-4979532a25b4.png)
 ![Simulator Screen Shot - iPhone 13 - 2022-06-20 at 22 01 50](https://user-images.githubusercontent.com/96768526/174659158-223ff14f-61c2-47f0-8901-a77f3dece2f7.png)
@@ -22,7 +22,7 @@
 
 Different design architectural patterns form an essential part of making the core of your app strong. How we shape our buildings is what later dictates how we live and grow, in a similar fashion it is how you architect your app that defines how you will handle the growth of the app.
 
-In MVC, all the logic is put into view controller — in that cas following things gets hardere:
+In MVC, all the logic is put into view controller — in that case following things get harder:
 
 - Testability (Better distribution, better testability)
 - Maintainability
@@ -32,7 +32,7 @@ In MVC, all the logic is put into view controller — in that cas following thin
 
 Any code should be maintainable, this is where the Single Responsibility Principle enters. This states that every module, class or function should have responsibility for a single part of the functionality.
 
-VIPER fulfils the single responsibility principle with the separation that it creates between various classes thus providing the developer base to write good maintainable code to keep up with constantly evolving the iOS platform.
+VIPER fulfils the single responsibility principle with the separation that it creates between various classes, thus providing the developer base to write good maintainable code to keep up with constantly evolving the iOS platform.
 
 
 # VIPER
@@ -49,7 +49,7 @@ VIPER is the synonym for:
 
 - VIPER follows a very clean architecture. It isolates each module from others, so changing or fixing bugs is very easy as you only have to update a specific module. 
 - VIPER creates a very good environment for unit testing. 
-- As each module is independent of others, it maintains low coupling very well. So, dividing work among co-developers is also pretty simple.
+- As each module is independent of the others, it maintains low coupling very well. So, dividing work among co-developers is also pretty simple.
 - VIPER should be used when an application’s requirements are very well-formed. Working with constantly changing requirements may create confusion and messed-up codes. So, it should not be used in small projects as `MVP` or `MVC` will be sufficient. 
 - Only the Presenter talks to the View, and only the Interactor talks to the Entity (model). The Presenter and Interactor coordinate with each other. The Presenter is concerned with display and user action, and the Interactor is concerned with manipulating the data.
 
@@ -64,7 +64,7 @@ VIPER is the synonym for:
 
 - This is the only class that interacts with all others. 
 - This is the mediator between the view and the Interactor.
-- It contains the UI related (but UIKit independent) business logic, invokes methods on the Interactor.
+- It contains the UI-related (but UIKit independent) business logic, and invokes methods on the Interactor.
 - It gets user response from the View and works accordingly. The only class to communicate with all the other components. Calls the Router for wire-framing, Interactor to fetch data (network calls or local data calls), View to update the UI.
 - It directs data between the View and Interactor, taking user actions and calling Router to move the user between views.
 
@@ -72,7 +72,7 @@ VIPER is the synonym for:
 
 - This is considered to be the backbone of the app as it contains the business logic. 
 - It handles data fetching.
-- Has the business logic of an app, e.g if business logic depends on making network calls then it is Interactor’s responsibility to do so.
+- Has the business logic of an app, e.g. if business logic depends on making network calls, then it is Interactor’s responsibility to do so.
 - It contains business logic related to the data (Entities) or networking, like creating new instances of entities or fetching them from the server. For those purposes you’ll use some Services and Managers which are not considered as a part of VIPER module but rather an external dependency.
 
 ### Router
@@ -87,7 +87,7 @@ VIPER is the synonym for:
 - These are the basic model objects used by the Interactor. It is the smallest element inside VIPER.
 - It represents application data.
 - Contains plain model classes used by the Interactor.
-- One thing to remember about the Entity is out of all the layers only the Interactor should own an entity.
+- One thing to remember about the Entity is out of all the layers, only the Interactor should own an entity.
 
 ## Flow of different Architecture Patterns
 
@@ -114,18 +114,18 @@ A naming convention is followed to name a protocol. e.g, `viewToPresenterProtoco
 - `PresentorToInteractorProtocol` — *Presenter* calls, *Interactor* listens.
 - `PresenterToRouterProtocol` — *Presenter* calls, *Router* listens.
 
-Also, our protocol names must be different for different modules. One way to achieve this is to add the module name as a prefix. So the format could be `<Module-Name><Protocol-Name>` e.g if the module name is Login then view to presenter protocol name will be `LoginViewToPresenterProtocol`.
+Also, our protocol names must be different for different modules. One way to achieve this is to add the module name as a prefix. So the format could be `<Module-Name><Protocol-Name>` e.g. if the module name is Login then view to presenter protocol name will be `LoginViewToPresenterProtocol`.
 
 ## Benefits of VIPER
 
 ### Testability
 
 - The loosely coupled modules ensure that testing is carried out easily and separately. 
-- Apart from the modules themselves even the objects inside are very clearly segregated and ensure great Unit testing.
+- Apart from the modules themselves, even the objects inside are very clearly segregated and ensure great Unit testing.
 
 ### Collaboration friendly
 
-- Independent modules make VIPER great for large teams. Fewer merge conflicts, better testability and easier change of modules gives the freedom to create the initial architecture skeleton first and then passing it to other developers to implement logic.
+- Independent modules make VIPER great for large teams. Fewer merge conflicts, better testability and easier change of modules give the freedom to create the initial architecture skeleton first and then passing it to other developers to implement logic.
 - The codebase is familiar to most developers. Files are smaller, logic is clearer and the overall stability and flexibility are higher.
 
 <img width="700" alt="Screenshot 2022-06-15 at 2 34 34 PM" src="https://user-images.githubusercontent.com/96768526/174663137-8d8bc5e7-2d8d-4526-ae6b-a0ea83d77de2.png">
