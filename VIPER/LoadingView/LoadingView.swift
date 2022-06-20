@@ -11,15 +11,11 @@ fileprivate let viewLoader = UIView()
 
 class LoadingView: UIView
 {
-    // MARK: - IBOutlet 
-    
     @IBOutlet weak var contentView     : UIView!
     @IBOutlet weak var viewBG          : UIView!
     @IBOutlet weak var viewTransparent : UIView!
     @IBOutlet weak var activityView    : UIActivityIndicatorView!
     @IBOutlet weak var lblActivity     : UILabel!
-
-    // MARK: - Initialization 
     
     /* For using Map view through code */
     
