@@ -110,7 +110,9 @@ A naming convention is followed to name a protocol. e.g, ‘viewToPresenterProto
 - `PresentorToInteractorProtocol` — *Presenter* calls, *Interactor* listens.
 - `PresenterToRouterProtocol` — *Presenter* calls, *Router* listens.
 
-Also, our protocol names must be different for different modules. One way to achieve this is to add the module name as a prefix. So the format could be <Module-Name><Protocol-Name> e.g if the module name is Login then view to presenter protocol name will be LoginViewToPresenterProtocol. Our example project follows this convention which we will see further in the story.
+Also, our protocol names must be different for different modules. One way to achieve this is to add the module name as a prefix. So the format could be `<Module-Name><Protocol-Name>` e.g if the module name is Login then view to presenter protocol name will be `LoginViewToPresenterProtocol`.
+
+> **IMPORTANT**
 
 - View will have reference to presenter and presenter will have reference to view, because both are calling each other.
 - Presenter will have reference to inter-actor and inter-actor will have reference to Presenter, because both are calling each other.
