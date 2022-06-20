@@ -108,7 +108,7 @@ VIPER is the synonym for:
 In VIPER, protocols are used to communicate between layers. One layer calls another through a protocol. The calling layer calls a function from a protocol. The listening layer conforms to that protocol and implements the function.
 A naming convention is followed to name a protocol. e.g, `viewToPresenterProtocol`. So, it is a ‘protocol’ that will be implemented by ‘the presenter’ to listen to what the ‘view’ has to say.
 
-- `PresenterToViewProtocol` — Presenter calls, View listens. The presenter receives a reference from this protocol to access View. View conforms to the protocol.
+- `PresenterToViewProtocol` — *Presenter* calls, *View* listens. The Presenter receives a reference from this protocol to access View. View conforms to the protocol.
 - `ViewToPresenterProtocol` — *View* calls, *Presenter* listens.
 - `InteractorToPresenterProtocol` — *Interactor* calls, *Presenter* listens.
 - `PresentorToInteractorProtocol` — *Presenter* calls, *Interactor* listens.
