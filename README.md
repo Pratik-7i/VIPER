@@ -3,9 +3,20 @@
 ![Simulator Screen Shot - iPhone 13 - 2022-06-20 at 19 46 40](https://user-images.githubusercontent.com/96768526/174659156-8c98d16c-ab6e-4805-9657-4979532a25b4.png)
 ![Simulator Screen Shot - iPhone 13 - 2022-06-20 at 22 01 50](https://user-images.githubusercontent.com/96768526/174659158-223ff14f-61c2-47f0-8901-a77f3dece2f7.png)
 
----------------------
+---
+
 ![Simulator Screen Shot - iPhone 13 - 2022-06-20 at 22 03 14](https://user-images.githubusercontent.com/96768526/174659174-f799d5a2-2271-4d2c-879f-fbbfd1d33fda.png)
 ![Simulator Screen Shot - iPhone 13 - 2022-06-20 at 22 03 24](https://user-images.githubusercontent.com/96768526/174659176-75ac5118-3366-42ad-8bf0-149196487329.png)
+
+[1. What is Architecture Pattern](#what-is-architecture-pattern)
+
+[2. VIPER Overview](#viper)
+
+[3. Flow of different Architecture Patterns](#flow-of-different-architecture-patterns)
+
+[4. VIPER Protocols](#viper-protocols)
+
+[5. Benefits of VIPER](#benefits-of-viper)
 
 # What is Architecture Pattern
 
@@ -78,18 +89,32 @@ VIPER is the synonym for:
 - Contains plain model classes used by the Interactor.
 - One thing to remember about the Entity is out of all the layers only the Interactor should own an entity.
 
-## MVC Flow
+## Flow of different Architecture Patterns
+
+### MVC Flow
 
 ![MVC](https://user-images.githubusercontent.com/96768526/174662796-b2aa569e-7545-44e8-97f5-6f81323dee0a.png)
 
-## MVVM Flow
+### MVVM Flow
 
 ![MVVM](https://user-images.githubusercontent.com/96768526/174662678-b0cb68fe-51d3-4b25-a898-318b4e9ee0b7.png)
 
-
-## VIPER Flow
+### VIPER Flow
 
 ![VIPER Flow](https://user-images.githubusercontent.com/96768526/174662833-120eb21f-95be-4df3-ab5a-fb65f40b00c4.png)
+
+## VIPER Protocols
+
+In VIPER, protocols are used to communicate between layers. One layer calls another through a protocol. The calling layer calls a function from a protocol. The listening layer conforms to that protocol and implements the function.
+A naming convention is followed to name a protocol. e.g, `viewToPresenterProtocol`. So, it is a ‘protocol’ that will be implemented by ‘the presenter’ to listen to what the ‘view’ has to say.
+
+- `PresenterToViewProtocol` — Presenter calls, View listens. The presenter receives a reference from this protocol to access View. View conforms to the protocol.
+- `ViewToPresenterProtocol` — *View* calls, *Presenter* listens.
+- `InteractorToPresenterProtocol` — *Interactor* calls, *Presenter* listens.
+- `PresentorToInteractorProtocol` — *Presenter* calls, *Interactor* listens.
+- `PresenterToRouterProtocol` — *Presenter* calls, *Router* listens.
+
+Also, our protocol names must be different for different modules. One way to achieve this is to add the module name as a prefix. So the format could be `<Module-Name><Protocol-Name>` e.g if the module name is Login then view to presenter protocol name will be `LoginViewToPresenterProtocol`.
 
 ## Benefits of VIPER
 
@@ -104,19 +129,6 @@ VIPER is the synonym for:
 - The codebase is familiar to most developers. Files are smaller, logic is clearer and the overall stability and flexibility are higher.
 
 <img width="700" alt="Screenshot 2022-06-15 at 2 34 34 PM" src="https://user-images.githubusercontent.com/96768526/174663137-8d8bc5e7-2d8d-4526-ae6b-a0ea83d77de2.png">
-
-## Protocols
-
-In VIPER, protocols are used to communicate between layers. One layer calls another through a protocol. The calling layer calls a function from a protocol. The listening layer conforms to that protocol and implements the function.
-A naming convention is followed to name a protocol. e.g, `viewToPresenterProtocol`. So, it is a ‘protocol’ that will be implemented by ‘the presenter’ to listen to what the ‘view’ has to say.
-
-- `PresenterToViewProtocol` — Presenter calls, View listens. The presenter receives a reference from this protocol to access View. View conforms to the protocol.
-- `ViewToPresenterProtocol` — *View* calls, *Presenter* listens.
-- `InteractorToPresenterProtocol` — *Interactor* calls, *Presenter* listens.
-- `PresentorToInteractorProtocol` — *Presenter* calls, *Interactor* listens.
-- `PresenterToRouterProtocol` — *Presenter* calls, *Router* listens.
-
-Also, our protocol names must be different for different modules. One way to achieve this is to add the module name as a prefix. So the format could be `<Module-Name><Protocol-Name>` e.g if the module name is Login then view to presenter protocol name will be `LoginViewToPresenterProtocol`.
 
 > **IMPORTANT**
 
