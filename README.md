@@ -1,4 +1,4 @@
-# VIPER architecture for iOS project with sample project. 
+# VIPER architecture for iOS with sample project. 
 
 ![Simulator Screen Shot - iPhone 13 - 2022-06-20 at 19 46 40](https://user-images.githubusercontent.com/96768526/174659156-8c98d16c-ab6e-4805-9657-4979532a25b4.png)
 ![Simulator Screen Shot - iPhone 13 - 2022-06-20 at 22 01 50](https://user-images.githubusercontent.com/96768526/174659158-223ff14f-61c2-47f0-8901-a77f3dece2f7.png)
