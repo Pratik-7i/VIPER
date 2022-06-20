@@ -42,6 +42,8 @@ VIPER is the synonym for:
 - As each module is independent of others, it maintains low coupling very well. So, dividing work among co-developers is also pretty simple.
 - VIPER should be used when an application’s requirements are very well-formed. Working with constantly changing requirements may create confusion and messed-up codes. So, it should not be used in small projects as MVP or MVC will suffice. 
 
+![VIPER](https://user-images.githubusercontent.com/96768526/174662946-a71f3128-387b-410c-abc5-4e8d21c99dcb.png)
+
 ### View
 
 - Class that has all the code to show the app interface to the user and get their responses. 
@@ -76,16 +78,18 @@ VIPER is the synonym for:
 - Contains plain model classes used by the Inter-actor.
 - One thing to remember about the Entity is out of all the layers only the Inter-actor should own an entity.
 
-MVVM
+## MVC Flow
 
-￼
+![MVC](https://user-images.githubusercontent.com/96768526/174662796-b2aa569e-7545-44e8-97f5-6f81323dee0a.png)
 
-VIPER
+## MVVM Flow
 
-￼
+![MVVM](https://user-images.githubusercontent.com/96768526/174662678-b0cb68fe-51d3-4b25-a898-318b4e9ee0b7.png)
 
-￼
 
+## VIPER Flow
+
+![VIPER Flow](https://user-images.githubusercontent.com/96768526/174662833-120eb21f-95be-4df3-ab5a-fb65f40b00c4.png)
 
 ## Benefits of VIPER
 
@@ -98,6 +102,8 @@ VIPER
 
 - Independent modules make VIPER great for large teams. Fewer merge conflicts, better testability and easier change of modules gives the freedom to create the initial architecture skeleton first and then passing it to other developers to implement logic.
 - The codebase is familiar to most developers. Files are smaller, logic is clearer and the overall stability and flexibility are higher.
+
+<img width="700" alt="Screenshot 2022-06-15 at 2 34 34 PM" src="https://user-images.githubusercontent.com/96768526/174663137-8d8bc5e7-2d8d-4526-ae6b-a0ea83d77de2.png">
 
 ## Protocols
 
@@ -114,8 +120,8 @@ Also, our protocol names must be different for different modules. One way to ach
 
 > **IMPORTANT**
 
-- View will have reference to presenter and presenter will have reference to view, because both are calling each other.
-- Presenter will have reference to inter-actor and inter-actor will have reference to Presenter, because both are calling each other.
-- Presenter will have reference to router, but no vice-versa, because router is not calling Presenter.
-- There is no role of entity reference. It exists in VIPER as entity same as it exists in MVC / MVVM.
+- `View` will have reference to `Presenter` and `Presenter` will have reference to `View`, because both are calling each other.
+- `Presenter` will have reference to `Interactor` and `Interactor` will have reference to `Presenter`, because both are calling each other.
+- `Presenter` will have reference to `Router`, but no vice-versa, because `Router` is not calling `Presenter`.
+- There is no role of `Entity` reference. It exists in VIPER as entity same as it exists in MVC / MVVM.
 
