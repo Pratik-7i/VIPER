@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  VIPER
+
+  Created by Pratik on 19/06/22.
+  
+*/
+
+"invalid_url" = "અમાન્ય URL";
+"no_response" = "Server માંથી કોઈ પ્રતિસાદ ન મળ્યો";
+"no_data"     = "Server માંથી કોઈ ડેટા ન મળ્યો";

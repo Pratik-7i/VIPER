@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  VIPER
+
+  Created by Pratik on 19/06/22.
+  
+*/
+
+"invalid_url" = "Invalid URL";
+"no_response" = "No response found from the server";
+"no_data"     = "No data found from the server";
