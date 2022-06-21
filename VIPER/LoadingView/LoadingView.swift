@@ -18,7 +18,7 @@ class LoadingView: UIView
     @IBOutlet weak var lblActivity     : UILabel!
     
     /* For using view through code */
-    
+      
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
