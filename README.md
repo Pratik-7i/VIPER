@@ -108,7 +108,7 @@ VIPER is the synonym for:
 In VIPER, protocols are used to communicate between layers. One layer calls another through a protocol. The calling layer calls a function from a protocol. The listening layer conforms to that protocol and implements the function.
 A naming convention is followed to name a protocol. e.g, `viewToPresenterProtocol`. So, it is a ‘protocol’ that will be implemented by ‘the presenter’ to listen to what the ‘view’ has to say.
 
-- `PresenterToViewProtocol` — Presenter calls, View listens. The presenter receives a reference from this protocol to access View. View conforms to the protocol.
+- `PresenterToViewProtocol` — *Presenter* calls, *View* listens. The Presenter receives a reference from this protocol to access View. View conforms to the protocol.
 - `ViewToPresenterProtocol` — *View* calls, *Presenter* listens.
 - `InteractorToPresenterProtocol` — *Interactor* calls, *Presenter* listens.
 - `PresentorToInteractorProtocol` — *Presenter* calls, *Interactor* listens.
@@ -135,5 +135,6 @@ Also, our protocol names must be different for different modules. One way to ach
 - `View` will have reference to `Presenter` and `Presenter` will have reference to `View`, because both are calling each other.
 - `Presenter` will have reference to `Interactor` and `Interactor` will have reference to `Presenter`, because both are calling each other.
 - `Presenter` will have reference to `Router`, but no vice-versa, because `Router` is not calling `Presenter`.
+- Based on above situations, take `weak` reference where two modules have reference to each other.
 - There is no role of `Entity` reference. It exists in VIPER as entity same as it exists in MVC / MVVM.
 
