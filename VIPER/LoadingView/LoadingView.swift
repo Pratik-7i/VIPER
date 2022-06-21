@@ -17,7 +17,7 @@ class LoadingView: UIView
     @IBOutlet weak var activityView    : UIActivityIndicatorView!
     @IBOutlet weak var lblActivity     : UILabel!
     
-    /* For using Map view through code */
+    /* For using view through code */
     
     override init(frame: CGRect) {
         super.init(frame: frame)
